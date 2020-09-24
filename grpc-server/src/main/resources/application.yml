@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb: #连接配置，我的mongodb没有设密码
+      host: 192.168.2.106 #这里改成你自己的数据库ip
+      port: 27017 #默认端口
+      database: admin #数据库名称
+server:
+  port: 8090

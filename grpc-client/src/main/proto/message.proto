@@ -1,0 +1,46 @@
+//使用proto3语法
+syntax = "proto3";
+
+//指定proto文件包名
+package com.tosang.grpc.entity;
+
+//指定 java 包名
+option java_package = "com.tosang.grpc.entity";
+//指定proto文件生成java文件后的类名
+option java_outer_classname = "EntityProto";
+
+//开启多文件
+option java_multiple_files = true;
+
+//请求参数
+message HelloRequest {
+  string message = 1;
+}
+
+//定义数据
+message Index {
+  string id = 1;
+  string securitiesCode = 2;
+  string ISIN = 3;
+  string nameOfSecuritiesInChinese = 4;
+  bool ST = 5;
+  bool starST = 6;
+  string nameOfSecuritiesInEnglish = 7;
+  string underlyingSecurityCode = 8;
+  string typesOfSecurities = 9;
+  string lastTransactionDate = 10;
+  string listingDate = 11;
+  string exRight = 12;
+  string exDividend = 13;
+  string priceRange = 14;
+  string limitTypes = 15;
+  string ceilingPrice = 16;
+  string lowerLimitPrice = 17;
+}
+
+//数据流
+message IndexResponse {
+  string msg = 1;
+  int32 code = 2;
+  repeated Index index = 3;
+}
